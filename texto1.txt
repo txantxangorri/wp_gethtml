@@ -1,1 +1,4 @@
 texto de prueba inicial
+
+He hecho una modificación de este archivo, lo he añadido a git y sin hacer commit he hecho un pull:
+--> Ha bajado las modificaciones que había en el servidor y ha mantenido este archivo, es decir, no lo ha machacado con la copia de arriba
