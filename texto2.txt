@@ -5,4 +5,7 @@ modificación 3
 modificación 4
 modificación 5
 modif 6
-
+*** Nueva linea . Voya a crear nueva rama branche2 ***
+**** git branch branche2
+**** git push origin branche2
+*** La rama branch2 aparece en remoto sin los cambios aplicados a este fichero. Es decir, hay que commitear y pushear. 
