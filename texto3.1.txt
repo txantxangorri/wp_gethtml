@@ -1,0 +1,84 @@
+Notas sobre el rebase 2:
+
+1. $ nano texto3.txt
+ 
+2. $ git status
+On branch branche2
+Your branch is up-to-date with 'origin/branche2'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   texto3.txt
+
+3. $ git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+4. $ git add texto3.txt 
+
+5. $ git commit -m "cambios modificación 3"
+[branche2 471f453] cambios modificación 3
+ 1 file changed, 3 insertions(+)
+
+6. $ git pull --rebase
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/txantxangorri/wp_gethtml
+   764869a..7073309  branche2   -> origin/branche2
+First, rewinding head to replay your work on top of it...
+Applying: cambios modificación 3
+Using index info to reconstruct a base tree...
+M	texto3.txt
+Falling back to patching base and 3-way merge...
+Auto-merging texto3.txt
+CONFLICT (content): Merge conflict in texto3.txt
+error: Failed to merge in the changes.
+Patch failed at 0001 cambios modificación 3
+The copy of the patch that failed is found in: .git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+7. $ git status
+rebase in progress; onto 7073309
+You are currently rebasing branch 'branche2' on '7073309'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git reset HEAD <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   texto3.txt
+
+8. $ git add texto3.txt
+
+9. $ git commit -m "modificación para arreglar conflicto tras rebase"
+[detached HEAD e20d5b2] modificación para arreglar conflicto tras rebase
+ 1 file changed, 4 insertions(+)
+
+10. $ git rebase --skip
+
+11. $ git status
+On branch branche2
+Your branch is ahead of 'origin/branche2' by 1 commit.
+  (use "git push" to publish your local commits)
+
+12. $ git push
+Username for 'https://github.com': txantxangorri
+Password for 'https://txantxangorri@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 385 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/txantxangorri/wp_gethtml.git
+   7073309..e20d5b2  branche2 -> branche2 
+
