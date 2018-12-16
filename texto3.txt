@@ -4,3 +4,5 @@ modificación 1
 =======
 modif 1
 >>>>>>> 371fa7f6e7299919c36b3ce8705bce8446ca32dc
+
+Prueba: modifico archivo en local (modif1) y modifico también aquí en el servidor (modif2).FDespués hago pull en local
