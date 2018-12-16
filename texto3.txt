@@ -5,6 +5,25 @@ modificación 1
 modif 1
 >>>>>>> 371fa7f6e7299919c36b3ce8705bce8446ca32dc
 
+<<<<<<< HEAD
 Prueba: modifico archivo en local (modif1) y modifico también aquí en el servidor (modif2).FDespués hago pull en local
 
 Modificación 2
+=======
+modificación de archivo en branche2. No lo commiteo y hago un pull
+** git status -> Your branch is up-to-date with 'origin/branche2'
+*** Changes not staged for commit: modified:   texto3.txt
+*** Untracked files: .texto3.txt.swp
+*** no changes added to commit
+>>>>>>> modif. texto3 en branche2
+
+** Al hacer un git pull --rebase detecta modificaciones tanto en remote como en local.
+** En remote he añadido lo que está entre el segundo <<<<<<< HEAD y el ======= posterior
+** En local he añadido lo que está entre ======= y >>>>>>> modif. texto3 en branche2 (mensage del commit preparado)
+
+$ git commit -m "resultado de un rebase"
+U	texto3.txt
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
