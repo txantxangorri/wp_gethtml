@@ -9,3 +9,5 @@ modif 6
 **** git branch branche2
 **** git push origin branche2
 *** La rama branch2 aparece en remoto sin los cambios aplicados a este fichero. Es decir, hay que commitear y pushear. 
+**** fatal: The current branch branche2 has no upstream branch. To push the current branch and set the remote as upstream, use
+*****    git push --set-upstream origin branche2
