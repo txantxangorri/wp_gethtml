@@ -29,6 +29,10 @@ hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
 
 
+<<<<<<< HEAD
 *******************
 **  -- REBASE 3  **
 *******************
+=======
+-> Modificación 3 realizada en local
+>>>>>>> cambios modificación 3
